@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Expresiones Regulares</title>
+</head>
+<body>
+  <script type="text/javascript">
+    var cadena = "Este es un mensaje de alumne";
+    var er1 = new RegExp("(alumn[oa]s|profesores)"); //buscara la palabra alumno dentro de la cadena
+    // si no se encuentra la palabra sera false si lo enciuentra será true
+    // ('alumno.') dara true cadas vez que habra algo despues de alumno
+    //("alumn[oa]") dara true si despues de alumn hay iun 'a' ó 'o'
+    //("alumn[a-i]") son validos en un rango de la a hasta la i
+    // "alumn[a-ip]" validos de la a - i y es valido tambien p
+    var er2 = /comentario/;
+    var archivo = 'foto007';
+
+    // "(alumn[oa]s?|profesores)" // ? indica que podria estar o no
+  var er3 = /foto00[0-367]/; //validos de 0 - 3 o tambien 6 y 7
+    /*
+    METACARAC TERES : comodin d*.jpg ejemplo  el * es el comodin
+    - SUSTITUCIÓN: Los que definimos que esperamos en un determinado caracter
+      . (punto) --> acepta cualquier simbolo/caracter
+      [a-e]   //es como un array como un listaso de caracteres de simbolos válidos
+     -CANTIDAD: Cuantas veces aparece unj caracter
+     | linea vertical operador or
+     + --> lom que esta antes del signo tiene que estar una ves como minimo
+     {num} -->lo qu esta antes tiene que aoparecer una cantidad de veces
+     {num,num_otro}--> tinen que aparecer entre esa cantidad de veces
+
+     - ATAJOS
+     \w --> representa cualquier caracter alafanumerico [a-zA-Z0-9]
+     \d --> representa solo digitos [0-9]
+     \s --> representa cualquier signo de espacio (barra, tab , entero) 
+    */
+
+     //var respuesta = er1.test(cadena);
+     //
+     var respuesta = er3.test(archivo);
+
+     document.write(respuesta);
+  </script>
+</body>
+</html>
